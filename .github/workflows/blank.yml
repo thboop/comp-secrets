@@ -1,0 +1,15 @@
+name: workflow-test
+on:
+  push:
+jobs:
+  run-workflow-job:
+    name: Run workflow
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Run my action
+      uses: ./myaction
+      with:
+        secret: "The value is: ${{ secrets.MY_SECRET }}"
