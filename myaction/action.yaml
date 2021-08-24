@@ -1,0 +1,13 @@
+name: 'gh-actions'
+description: ''
+inputs:
+  secret:
+    description: "use a secret in a diff repo"
+    required: true
+    default: "null"
+runs:
+  using: "composite"
+  steps:
+    - name: run a pipeline
+      run: echo "${{ inputs.secret }}"
+      shell: bash
